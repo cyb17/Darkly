@@ -19,6 +19,6 @@ These vulnerabilities are caused by unsanitized user inputs and/or lack of acces
 
 ## Patch
 
-1- Sanitize correctly user input or not use user input directly in file paths.  
-2- Resolve the real path and ensure it stays within an allowed directory.  
-3- Can use a Whitelist-Based File Mapping  
+-> Sanitize correctly user input or not use user input directly in file paths.  
+-> Resolve the real path and ensure it stays within an allowed directory.  
+-> Can use a Whitelist-Based File Mapping  
