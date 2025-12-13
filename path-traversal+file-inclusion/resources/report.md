@@ -1,6 +1,19 @@
-## Vulnerabilities Description :  
+# Path Traversal & File Inclusion
 
-- Path Traversal : Manipulating file paths to access files (config files, sources code, logs...) outside the indented directory. 
+## Observation
+
+Navigation to pages other than Home seems to depend on the "page" parameter, when trying http://192.168.56.102/index.php?page=test an alert appeared :
+	
+	<script>alert('Wtf ?');</script><!DOCTYPE HTML>
+	<html>
+		<head>
+			<title>BornToSec - Web Section</title>
+			
+when trying with few level of relative path (like ../../etc/passwd), each time we got a different alert message.
+
+## Vulnerability Identified
+
+- Path Traversal (or Directory Traversal) : Manipulating file paths to access files (config files, sources code, logs...) outside the indented directory. 
 
 	Ex: http://site.com?page=../../etc/passwd 
 
@@ -12,12 +25,7 @@
 These vulnerabilities are caused by unsanitized user inputs and/or lack of access control to resources.
 
 
-## Exploit
-
--> add ?page=../../../../../../../<directory_name>/<file_name> into the URL search bar to get the file you want  
--> for example : http://site.com/index.php?page=../../../../../../../etc/passwd
-
-## Patch
+## How to avoid the breach
 
 -> Sanitize correctly user input or not use user input directly in file paths.  
 -> Resolve the real path and ensure it stays within an allowed directory.  
