@@ -12,7 +12,7 @@ We found that there was a cookie named "I_am_admin", it was hashed using MD5 and
 
 - Client-Side Trust: Authorization decisions rely on client-supplied data.
 
-## Recommended Fix
+## How to avoid the breach ?
 
 - Apply secure cookie attributes (HttpOnly, Secure, SameSite).
 - Avoid insecure hash function such as MD5.

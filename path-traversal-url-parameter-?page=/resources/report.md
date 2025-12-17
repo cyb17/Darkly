@@ -1,4 +1,4 @@
-# Path Traversal & File Inclusion
+# Insecure URL parameter ?page=
 
 ## How do we find the breach ?
 
@@ -30,7 +30,7 @@ When trying a few levels of relative paths, an alert message was displayed each 
 
 These vulnerabilities are caused by unsanitized user inputs and/or lack of access control to resources.
 
-## Recommended Fix
+## How to avoid the breach ?
 
 - Sanitize correctly user input or not use user input directly in file paths.
 - Resolve the real path and ensure it stays within an allowed directory.
