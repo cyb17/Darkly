@@ -4,10 +4,11 @@
 
 On the survey page, we observed that we could modify the select option’s value to anything. The data did not seem to be verified on the server side. When we entered a large number, we got the flag.
 
-## Vulnerability Identified
+## How to exploit the breach ?
 
-User input was not correctly verified at the server side.
+When a select input is not strictly validated server‑side, attackers can tamper with its value to bypass business logic or access controls by submitting values not intended by the application.
 
 ## How to avoid the breach ?
 
-- Never trust user input.
+- Validate user input.
+- Reject any unknown and unexpected values. 

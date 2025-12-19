@@ -12,9 +12,9 @@ First name: 5FlagGetThe4242Decrypt this password -> then lower all the char. Sh2
 Surname : 2
 ```
 5. We decrypted 5ff9d0165b4f92b14994e5c685cdce28, and we got {"Plain":"FortyTwo","Algo":"md5"}
-6. Then we encrypted fortytwo on Sh256, and we got the flag.
+6. Then we encrypted `fortytwo` on Sh256, and we got the flag.
 
-## Vulnerability Identified :
+## How to exploit the breach ?
 
 - SQL injection : inject malicious SQL code as user input to manipulate or get database information.
 

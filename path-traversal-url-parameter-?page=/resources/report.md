@@ -18,7 +18,7 @@ Navigation to pages other than Home seems to depend on the "page" parameter, whe
 
 When trying a few levels of relative paths, an alert message was displayed each time as a hint, and the flag was captured.
 
-## Vulnerability Identified
+## How to exploit the breach ?
 
 - Path Traversal (or Directory Traversal) : Manipulating file paths to access files (config files, sources code, logs...) outside the indented directory.
 
